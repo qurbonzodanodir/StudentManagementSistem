@@ -45,8 +45,8 @@ class Course(models.Model):
     descriptioin = models.TextField()
     duration = models.DateField()
     cost = models.IntegerField()
-    students = models.ForeignKey(Students,on_delete = models.CASCADE)
-    teacher = models.ForeignKey(Teacher,on_delete = models.CASCADE)
+    students = models.ManyToManyField(Students,related_name='students')
+    teacher = models.ManyToManyField(Teacher,related_name='teacher')
 
 
     def __str__(self):

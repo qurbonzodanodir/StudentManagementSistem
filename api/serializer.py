@@ -16,4 +16,13 @@ class TeacherSerializerApi(serializers.ModelSerializer):
 class CourseSerializerApi(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = '__all__'              
+        fields = '__all__'
+
+
+
+class CourseListSerializerApi(serializers.ModelSerializer):
+    students = serializers.StringRelatedField(many=True)
+    teacher = serializers.StringRelatedField(many=True)
+    class Meta:
+        model = Course
+        fields = ['title', 'descriptioin', 'duration', 'cost', 'students','teacher']        

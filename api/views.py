@@ -60,6 +60,6 @@ class CourseUpdateApi(generics.RetrieveUpdateDestroyAPIView,):
 
 class CourseListApi(generics.ListAPIView):
     queryset = Course.objects.all()
-    serializer_class = CourseSerializerApi
+    serializer_class = CourseListSerializerApi
     permission_classes = (permissions.AllowAny,)
 
